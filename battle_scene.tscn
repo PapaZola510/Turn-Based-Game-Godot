@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dxaxm2dx6f55h"]
+
+[ext_resource type="Script" uid="uid://ci6n6l8eentam" path="res://battle_scene.gd" id="1_fw8re"]
+
+[node name="battle_scene" type="Node2D" unique_id=953776098]
+script = ExtResource("1_fw8re")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=553316227]
+
+[node name="Attack_Button" type="Button" parent="UI" unique_id=1943515949]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -193.0
+offset_right = 218.0
+offset_bottom = -95.0
+grow_vertical = 0
+text = "Attack"
+
+[node name="PlayerHP" type="ProgressBar" parent="UI" unique_id=440544407]
+offset_left = -1.0
+offset_top = 152.0
+offset_right = 204.0
+offset_bottom = 179.0
+value = 100.0
+
+[node name="EnemyHP" type="ProgressBar" parent="UI" unique_id=1156226583]
+offset_left = 950.0
+offset_top = 170.0
+offset_right = 1154.0
+offset_bottom = 197.0
+value = 100.0
+
+[node name="BattleText" type="Label" parent="UI" unique_id=1099605319]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealButton" type="Button" parent="UI" unique_id=1212338933]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -93.0
+offset_right = 215.0
+grow_vertical = 0
+text = "Heal"
+
+[node name="Player" type="Node2D" parent="." unique_id=2100226561]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=131601671]
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1537011005]
+custom_minimum_size = Vector2(100, 100)
+offset_top = 216.0
+offset_right = 100.0
+offset_bottom = 316.0
+color = Color(0.10980392, 1, 1, 1)
+
+[node name="Enemy" type="Node2D" parent="." unique_id=1993414004]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=1985476896]
+
+[node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=303450531]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1049.0
+offset_top = 230.0
+offset_right = 1149.0
+offset_bottom = 330.0
+color = Color(1, 0.05882353, 0, 1)
+
+[connection signal="pressed" from="UI/Attack_Button" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="UI/HealButton" to="." method="_on_heal_button_pressed"]
